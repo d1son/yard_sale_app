@@ -18,9 +18,7 @@ app.use(logger('dev'));
 app.use(express.static(__dirname + '/public'));
 
 // Requiring Schema //
-// var User = require("./model/user.js");
-// var Item = require("./models/item.js");
-// var Comment = require("./models/comment.js");
+
 
 
 // App routes //
@@ -28,16 +26,8 @@ app.get("/", function(req, res) {
 	res.sendFile(process.cwd() + "/public/index.html");
 });
 
-app.post("/registerUser", function(req, res) {
-  var newUser = new User(req.body);
-  newUser.save(function(err, newUser) {
-    if (err) {
-      console.log(err);
-      res.send(err);
-    } else {
-      res.send(newUser);
-    }
-  });
+app.post("/registerdUser", function(req, res) {
+ 
 });
 
 
