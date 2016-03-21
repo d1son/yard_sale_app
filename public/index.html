@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html ng-app="ys">
+<head>
+	<title>Yard Sale!</title>
+	<!-- Bootstrap CSS-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<!-- Bootstrap Font Awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+	<!-- Angular Javascript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<!-- Angular App Javascript -->
+	<script type="text/javascript" src="/assets/js/app.js"></script>
+</head>
+<body>
+
+	<div ng-controller="ysController">
+		<!-- Navbar -->
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Yard Sale</a>
+				</div>
+				<div>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#" data-toggle="modal" data-target="#loginModal">Login</a></li>
+						<li><a href="#" data-toggle="modal" data-target="#registerModal">Registration</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Login Modal -->
+		<div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
+			<div id="login-overlay" class="modal-dialog">
+			  <div class="modal-content">
+			    <div class="modal-header">
+			      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
+			      </button>
+			      <h4 class="modal-title" id="myModalLabel">Login</h4>
+			    </div>
+			    <div class="modal-body">
+			      <div class="row">
+			        <div class="col-xs-12">
+			          <div class="">
+			            <form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
+			              <div class="form-group">
+			                <label for="username" class="control-label">Username</label>
+			                <input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="example@gmail.com">
+			              </div>
+			              <div class="form-group">
+			                <label for="password" class="control-label">Password</label>
+			                <input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password">
+			              </div>
+			              <button type="submit" class="btn btn-success btn-block">Login</button>
+			            </form>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+		<!-- Registration Modal -->
+		<div class="modal fade" id="registerModal" tabindex="-1" role="dialog">
+			<div id="login-overlay" class="modal-dialog">
+			  <div class="modal-content">
+			    <div class="modal-header">
+			      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
+			      </button>
+			      <h4 class="modal-title" id="myModalLabel">Registration</h4>
+			    </div>
+			    <div class="modal-body">
+			      <div class="row">
+			        <div class="col-xs-9 col-xs-offset-2">
+			          <div class="well">
+			            <form id="loginForm" ng-submit="register()">
+			            	<div class="form-group">
+			            		<label for="firstname" class="control-label">First Name</label>
+			            		<input type="text" class="form-control" id="firstname" name="firstname" ng-model="firstname" title="Please enter your firstname" placeholder="John">
+			            	</div>
+			            	<div class="form-group">
+			            		<label for="lastname" class="control-label">Last Name</label>
+			            		<input type="text" class="form-control" id="lastname" name="lastname" ng-model="lastname" title="Please enter your last name" placeholder="Smith">
+			            	</div>
+			              <div class="form-group">
+			                <label for="email" class="control-label">Email</label>
+			                <input type="text" class="form-control" id="email" name="email" ng-model="email" title="Please enter you email" placeholder="example@gmail.com">
+			              </div>
+			              <div class="form-group">
+			                <label for="password" class="control-label">Password</label>
+			                <input type="password" class="form-control" id="password" name="password" ng-model="password" title="Please enter your password">
+			              </div>
+			              <button type="submit" class="btn btn-success btn-block">Register</button>
+			            </form>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<!-- jQuery -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<!-- Bootstrap Javascript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+</html>
