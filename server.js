@@ -8,8 +8,9 @@ var logger = require('morgan');
 var PORT = process.env.PORT || 3000;
 
 // Mongo connection //
-var db = 'mongodb://localhost/yardSale';
+var db = 'mongodb://localhost/ys';
 mongoose.connect(db);
+
 
 // Using logger & public folder //
 app.use(bodyParser.json());

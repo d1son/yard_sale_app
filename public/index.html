@@ -11,11 +11,11 @@
 	<!-- Angular Javascript -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 	<!-- Angular App Javascript -->
-	<script type="text/javascript" src="/assets/js/app.js"></script>
+	<script type="text/javascript" src="/assets/js/controllers/app.js"></script>
 </head>
 <body>
 
-	<div ng-controller="ysController">
+	<div>
 		<!-- Navbar -->
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
@@ -32,7 +32,7 @@
 		</nav>
 
 		<!-- Login Modal -->
-		<div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
+<!-- 		<div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
 			<div id="login-overlay" class="modal-dialog">
 			  <div class="modal-content">
 			    <div class="modal-header">
@@ -47,7 +47,7 @@
 			            <form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
 			              <div class="form-group">
 			                <label for="username" class="control-label">Username</label>
-			                <input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="example@gmail.com">
+			                <input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="example@gmail.com" ng-model="users.username">
 			              </div>
 			              <div class="form-group">
 			                <label for="password" class="control-label">Password</label>
@@ -61,9 +61,10 @@
 			    </div>
 			  </div>
 			</div>
-		</div>
+		</div> -->
+		
 		<!-- Registration Modal -->
-		<div class="modal fade" id="registerModal" tabindex="-1" role="dialog">
+		<!-- <div class="modal fade" id="registerModal" tabindex="-1" role="dialog">
 			<div id="login-overlay" class="modal-dialog">
 			  <div class="modal-content">
 			    <div class="modal-header">
@@ -101,11 +102,17 @@
 			  </div>
 			</div>
 		</div>
+	</div> -->
+
+	
+	<div ng-controller="UserController">
+		<h1>{{ username }}</h1>
 	</div>
-
-
-
-
+	<form ng-model="add.item">
+		<input type="text" ng-model="add.item" placeholder="item"></input>
+		<button class="btn btn-primary" type="submit" value="add">add</button>
+	</form>	
+	{{ add }}
 
 	<!-- jQuery -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
